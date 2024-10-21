@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e402df73-1b09-4bfc-94f6-214ae8c48784/resourceGroups/appsvc_windows_centralus2/providers/Microsoft.Web/sites/jacobsen-webapp",
+    "appService.deploySubpath": "exercise.wwwapi"
+}
