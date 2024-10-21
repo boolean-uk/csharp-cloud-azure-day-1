@@ -8,8 +8,8 @@ namespace exercise.wwwapi.DataContext
   {
     private static string GetConnectionString()
     {
-      string jsonSettings = File.ReadAllText("appsettings.json");
-      JObject configuration = JObject.Parse(jsonSettings);
+      var jsonSettings = File.ReadAllText("appsettings.json");
+      var configuration = JObject.Parse(jsonSettings);
       return configuration["ConnectionStrings"]["DefaultConnection"].ToString();
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

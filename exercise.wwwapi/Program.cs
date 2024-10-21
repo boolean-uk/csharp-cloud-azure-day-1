@@ -9,11 +9,11 @@ builder.Services.AddControllers();
 // Add CORS service with policy that allows any origin
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", builder =>
+    options.AddPolicy("AllowAll", b =>
     {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
+        b.AllowAnyOrigin()
+         .AllowAnyMethod()
+         .AllowAnyHeader();
     });
 });
 
