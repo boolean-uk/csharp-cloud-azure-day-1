@@ -1,6 +1,6 @@
 import "react";
 
-const url = import.meta.env.VITE_ENDPOINT_URL; //|| "http://localhost:5168";
+const url = "https://espensl-app.azurewebsites.net"
 
 // ensure trailing / is removed
-export const API_URL = url.replace(/\/$/, "");
+export const API_URL = url;
