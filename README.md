@@ -2,7 +2,7 @@
 
 ## Learning Objectives
 
-- Understand how to deploy a front end to an Azure Blob
+- Understand how to deploy a front end to an Azure Blob.
 - Understand how to deploy an API to an Azure App
 - Understand how to spin up an Azure Postgres instance
 
