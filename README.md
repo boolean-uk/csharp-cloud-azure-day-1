@@ -1,3 +1,5 @@
+Completed
+
 # C# Cloud Azure Day One
 
 ## Learning Objectives
