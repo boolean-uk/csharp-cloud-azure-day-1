@@ -35,3 +35,5 @@ For this exercise you should get a a full stack web application working in Azure
 
 - Use the [Microsoft Azurite Storage Emulator](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azurite?tabs=visual-studio%2Cblob-storage)
 - Use the [Microsoft Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer/)
+
+  Did the task with some of my fellow students to save space
