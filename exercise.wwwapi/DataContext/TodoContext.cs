@@ -14,8 +14,8 @@ namespace exercise.wwwapi.DataContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-            //optionsBuilder.UseNpgsql(GetConnectionString());
-            optionsBuilder.UseInMemoryDatabase("ToDoDatabase");
+            optionsBuilder.UseNpgsql(GetConnectionString());
+            //optionsBuilder.UseInMemoryDatabase("ToDoDatabase");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
