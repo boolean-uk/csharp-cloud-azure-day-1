@@ -1,3 +1,4 @@
+using exercise.wwwapi.DataContext;
 using exercise.wwwapi.EndPoints;
 using exercise.wwwapi.Models;
 using exercise.wwwapi.Repository;
@@ -22,6 +23,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IDatabaseRepository<Todo>, DatabaseRepository<Todo>>();
+
+builder.Services.AddDbContext<TodoContext>();
 
 var app = builder.Build();
 
