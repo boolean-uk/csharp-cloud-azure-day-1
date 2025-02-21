@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   plugins: [react()],
   define: {
-    "import.meta.env.VITE_API_URL": JSON.stringify(process.env.VITE_API_URL), // Read from Azure
+    "import.meta.env.VITE_API_URL":
+      JSON.stringify(process.env.VITE_API_URL) || "http://localhost:3001",
   },
 });
-console.log("ENV VARIABLES:", process.env);
