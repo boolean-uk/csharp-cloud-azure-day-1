@@ -2,7 +2,6 @@ using exercise.wwwapi.DataContext;
 using exercise.wwwapi.EndPoints;
 using exercise.wwwapi.Models;
 using exercise.wwwapi.Repository;
-using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,11 +24,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IDatabaseRepository<Todo>, DatabaseRepository<Todo>>();
 
-var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL")
-                       ?? builder.Configuration.GetConnectionString("DefaultConnection");
-
-builder.Services.AddDbContext<TodoContext>(options =>
-    options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<TodoContext>();
 
 var app = builder.Build();
 
