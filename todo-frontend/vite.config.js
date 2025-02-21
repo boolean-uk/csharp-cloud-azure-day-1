@@ -8,3 +8,4 @@ export default defineConfig({
     "import.meta.env.VITE_API_URL": JSON.stringify(process.env.VITE_API_URL), // Read from Azure
   },
 });
+console.log("ENV VARIABLES:", process.env);
