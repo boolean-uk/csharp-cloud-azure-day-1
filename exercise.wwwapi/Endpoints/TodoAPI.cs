@@ -7,7 +7,7 @@ namespace exercise.wwwapi.EndPoints
   {
     public static void ConfigureTodoAPI(this WebApplication app)
     {
-            app.MapGet("/", GetIndex);
+           app.MapGet("/", GetIndex);
             app.MapGet("/todos", GetTodos);
       app.MapPost("/todos", CreateTodo);
       app.MapPut("/todos/{id:int}", UpdateTodo);
