@@ -6,29 +6,36 @@ namespace exercise.wwwapi.DataContext
 {
   public class TodoContext : DbContext
   {
-    private static string GetConnectionString()
-    {
-      string jsonSettings = File.ReadAllText("appsettings.json");
-      JObject configuration = JObject.Parse(jsonSettings);
-      return configuration["ConnectionStrings"]["DefaultConnection"].ToString();
-    }
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-            optionsBuilder.UseNpgsql(GetConnectionString());
-            //optionsBuilder.UseInMemoryDatabase("ToDoDatabase");
-    }
+        private static string GetConnectionString()
+        {
+          string jsonSettings = File.ReadAllText("appsettings.json");
+          JObject configuration = JObject.Parse(jsonSettings);
+          return configuration["ConnectionStrings"]["DefaultConnection"].ToString();
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL");
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-      base.OnModelCreating(modelBuilder);
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new Exception("Database connection string is missing.");
+            }
 
-      modelBuilder.Entity<Todo>().HasData(
-            new Todo { Id = 1, Title = "First task", Completed = true },
-            new Todo { Id = 2, Title = "Second task", Completed = false },
-            new Todo { Id = 3, Title = "Third task", Completed = true }
-        );
-    }
+            optionsBuilder.UseNpgsql(connectionString);
+        }
 
-    public DbSet<Todo> Todos { get; set; }
-  }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+          base.OnModelCreating(modelBuilder);
+
+          modelBuilder.Entity<Todo>().HasData(
+                new Todo { Id = 1, Title = "First task", Completed = true },
+                new Todo { Id = 2, Title = "Second task", Completed = false },
+                new Todo { Id = 3, Title = "Third task", Completed = true }
+            );
+        }
+
+        public DbSet<Todo> Todos { get; set; }
+      }
 }
