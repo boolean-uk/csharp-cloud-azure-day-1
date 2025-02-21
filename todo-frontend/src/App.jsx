@@ -16,7 +16,7 @@ function App() {
       });
   }, []);
 
-  // HANDLE UPDATING TODO
+  //  HANDLE UPDATING TODO
   const handleCheckedChangeRequest = (id, checked) => {
     fetch(`${API_URL}/todos/${id}`, {
       method: "PUT",
