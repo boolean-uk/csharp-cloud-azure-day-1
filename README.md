@@ -1,3 +1,5 @@
+Let me know if I hould have taken prints for the hand in.. otherwise completed.
+
 # C# Cloud Azure Day One
 
 ## Learning Objectives
