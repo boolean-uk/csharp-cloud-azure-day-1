@@ -102,7 +102,6 @@ function App() {
     setNewTaskTitle(event.target.value);
   };
 
-  console.log(API_URL);
   return (
     <>
       <h1>Todo App</h1>
